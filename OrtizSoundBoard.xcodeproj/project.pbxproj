@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		34519FA72CB5E5B9001917AE /* OrtizSoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34519FA52CB5E5B9001917AE /* OrtizSoundBoard.xcdatamodeld */; };
 		34519FA92CB5E5BA001917AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34519FA82CB5E5BA001917AE /* Assets.xcassets */; };
 		34519FAC2CB5E5BA001917AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34519FAA2CB5E5BA001917AE /* LaunchScreen.storyboard */; };
+		34519FB42CB5EDC8001917AE /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34519FB32CB5EDC8001917AE /* SoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		34519FA82CB5E5BA001917AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34519FAB2CB5E5BA001917AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34519FAD2CB5E5BA001917AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34519FB32CB5EDC8001917AE /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				34519FAA2CB5E5BA001917AE /* LaunchScreen.storyboard */,
 				34519FAD2CB5E5BA001917AE /* Info.plist */,
 				34519FA52CB5E5B9001917AE /* OrtizSoundBoard.xcdatamodeld */,
+				34519FB32CB5EDC8001917AE /* SoundViewController.swift */,
 			);
 			path = OrtizSoundBoard;
 			sourceTree = "<group>";
@@ -105,7 +108,7 @@
 				};
 			};
 			buildConfigurationList = 34519F942CB5E5B9001917AE /* Build configuration list for PBXProject "OrtizSoundBoard" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -144,6 +147,7 @@
 				34519FA72CB5E5B9001917AE /* OrtizSoundBoard.xcdatamodeld in Sources */,
 				34519F9D2CB5E5B9001917AE /* AppDelegate.swift in Sources */,
 				34519F9F2CB5E5B9001917AE /* SceneDelegate.swift in Sources */,
+				34519FB42CB5EDC8001917AE /* SoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
