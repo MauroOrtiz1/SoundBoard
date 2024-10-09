@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PEj-5s-oF5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PEj-5s-oF5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -86,9 +87,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd5-CA-ZCS">
-                                <rect key="frame" x="177" y="410.5" width="60" height="30"/>
+                                <rect key="frame" x="174" y="410.5" width="66" height="33"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Agregar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -96,14 +97,33 @@
                                     <action selector="agregarTapped:" destination="Vsd-fh-T6m" eventType="touchUpInside" id="jkd-oj-wR6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo: 0s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI7-s3-iQe">
+                                <rect key="frame" x="156.5" y="483.5" width="101" height="23"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wNN-HK-jSo">
+                                <rect key="frame" x="38" y="546.5" width="338" height="31"/>
+                                <connections>
+                                    <action selector="volumenChanged:" destination="Vsd-fh-T6m" eventType="valueChanged" id="p71-Qy-Wtw"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ea0-Pp-p5s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wNN-HK-jSo" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="1V7-Ly-6Zq"/>
+                            <constraint firstItem="Ea0-Pp-p5s" firstAttribute="trailing" secondItem="wNN-HK-jSo" secondAttribute="trailing" constant="40" id="5Kh-Pk-v3c"/>
                             <constraint firstItem="BKx-c5-tqI" firstAttribute="top" secondItem="vEx-Wa-uqW" secondAttribute="bottom" constant="20" id="8to-0Z-bus"/>
                             <constraint firstItem="Ea0-Pp-p5s" firstAttribute="trailing" secondItem="BKx-c5-tqI" secondAttribute="trailing" constant="20" id="DXs-I6-fws"/>
                             <constraint firstItem="cd5-CA-ZCS" firstAttribute="top" secondItem="BKx-c5-tqI" secondAttribute="bottom" constant="35" id="ErA-oQ-x2v"/>
                             <constraint firstItem="azR-6g-0Yr" firstAttribute="top" secondItem="Ea0-Pp-p5s" secondAttribute="top" constant="20" id="NId-Li-9ts"/>
+                            <constraint firstItem="wNN-HK-jSo" firstAttribute="leading" secondItem="Ea0-Pp-p5s" secondAttribute="leading" constant="40" id="V4R-OI-cQb"/>
+                            <constraint firstItem="UI7-s3-iQe" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="YqZ-JD-eRE"/>
+                            <constraint firstItem="wNN-HK-jSo" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="bL7-9q-Vyd"/>
+                            <constraint firstItem="wNN-HK-jSo" firstAttribute="top" secondItem="UI7-s3-iQe" secondAttribute="bottom" constant="40" id="dQu-Jn-Y2V"/>
                             <constraint firstItem="cd5-CA-ZCS" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="dXa-eQ-G79"/>
                             <constraint firstItem="flJ-23-LIF" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="gH4-TZ-u9o"/>
                             <constraint firstItem="vEx-Wa-uqW" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="j1x-l8-pXu"/>
@@ -111,6 +131,7 @@
                             <constraint firstItem="BKx-c5-tqI" firstAttribute="leading" secondItem="Ea0-Pp-p5s" secondAttribute="leading" constant="20" id="l9R-wD-JGf"/>
                             <constraint firstItem="Ea0-Pp-p5s" firstAttribute="trailing" secondItem="vEx-Wa-uqW" secondAttribute="trailing" constant="20" id="lJS-8X-PqA"/>
                             <constraint firstItem="azR-6g-0Yr" firstAttribute="centerX" secondItem="Q6b-2d-fva" secondAttribute="centerX" id="lQu-fc-ED9"/>
+                            <constraint firstItem="UI7-s3-iQe" firstAttribute="top" secondItem="cd5-CA-ZCS" secondAttribute="bottom" constant="40" id="qDa-zj-ylh"/>
                             <constraint firstItem="vEx-Wa-uqW" firstAttribute="top" secondItem="flJ-23-LIF" secondAttribute="bottom" constant="40" id="rCQ-dg-E3d"/>
                             <constraint firstItem="vEx-Wa-uqW" firstAttribute="leading" secondItem="Ea0-Pp-p5s" secondAttribute="leading" constant="20" id="rDJ-mJ-f7Y"/>
                             <constraint firstItem="flJ-23-LIF" firstAttribute="top" secondItem="azR-6g-0Yr" secondAttribute="bottom" constant="30" id="v7M-8X-S5i"/>
@@ -122,11 +143,13 @@
                         <outlet property="grabarButton" destination="azR-6g-0Yr" id="K81-pa-5Mp"/>
                         <outlet property="nombreTextField" destination="BKx-c5-tqI" id="YwB-fY-LEh"/>
                         <outlet property="reproducirButton" destination="flJ-23-LIF" id="bVg-NN-MFz"/>
+                        <outlet property="timertLabel" destination="UI7-s3-iQe" id="iW8-Y6-dMS"/>
+                        <outlet property="volumenSlider" destination="wNN-HK-jSo" id="UAC-0Z-Tcn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZZ-Hs-hIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="47"/>
+            <point key="canvasLocation" x="1679.7101449275362" y="46.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MG3-aR-u7B">
@@ -158,6 +181,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

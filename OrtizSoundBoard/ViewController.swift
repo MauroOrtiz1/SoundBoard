@@ -13,11 +13,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return grabaciones.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let grabacion = grabaciones[indexPath.row]
-        cell.textLabel?.text = grabacion.nombre
+        let nombre = grabacion.nombre ?? "Sin Nombre"
+        let tiempo = String(grabacion.tiempo)
+        cell.textLabel?.text = "\(nombre) - \(tiempo) segundos"
         return cell
     }
     
@@ -52,13 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             context.delete(grabacion)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
             do {
                 grabaciones = try context.fetch(Grabacion.fetchRequest())
                 tablaGrabaciones.reloadData()
             } catch {}
         }
     }
-
 }
 

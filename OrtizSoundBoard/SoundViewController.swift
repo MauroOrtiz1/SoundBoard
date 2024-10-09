@@ -14,10 +14,14 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var reproducirButton: UIButton!
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var agregarButton: UIButton!
-
+    @IBOutlet weak var timertLabel: UILabel!
+    @IBOutlet weak var volumenSlider: UISlider!
+    
     var grabarAudio:AVAudioRecorder?
     var reproducirAudio:AVAudioPlayer?
     var audioURL:URL?
+    var timer: Timer?
+    var timeElapsed: TimeInterval = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +65,9 @@ class SoundViewController: UIViewController {
     
     @IBAction func grabarTapped(_ sender: Any) {
         if grabarAudio!.isRecording {
-            // detener la grabacion
+            // detener la grabacion y el timer
             grabarAudio?.stop()
+            timer?.invalidate()
             // cambiar texto del botón grabar
             grabarButton.setTitle("GRABAR", for: .normal)
             reproducirButton.isEnabled = true
@@ -70,6 +75,9 @@ class SoundViewController: UIViewController {
         } else {
             // empezar a grabar
             grabarAudio?.record()
+            timeElapsed = 0.0 // Resetear el tiempo
+            //timertLabel.text = "Tiempo: 0s"
+            startTimer()
             // cambiar el texto del botón grabar a detener
             grabarButton.setTitle("DETENER", for: .normal)
             reproducirButton.isEnabled = false
@@ -88,8 +96,20 @@ class SoundViewController: UIViewController {
         let grabacion = Grabacion(context: context)
         grabacion.nombre = nombreTextField.text
         grabacion.audio = NSData(contentsOf: audioURL!)! as Data
+        grabacion.tiempo = Int16(timeElapsed)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
-
+    @IBAction func volumenChanged(_ sender: UISlider) {
+        reproducirAudio?.volume = sender.value
+    }
+    
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            self.timeElapsed += 1.0
+            self.timertLabel.text = "Tiempo: \(Int(self.timeElapsed))s"
+        }
+    }
 }
